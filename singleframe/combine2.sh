@@ -8,6 +8,3 @@ if ! ffmpeg -loop 1 -i img.jpg -i output.mp3 -shortest -acodec copy -vcodec mjpe
 else
     printf "Your video has been created ${GREEN}sucsessfully${NC}\n"
 fi
-
-python3 upload_wizard.py
-exit

@@ -125,6 +125,8 @@ elif mode == 3:
         answer = input(">>> ")
         if answer == "y":
             system("echo 'editor 7 y' >> conf.dolphin")
+            amount = int(input("How many semitones would you like to shift?"))
+            system(f"echo 'editor 8 {amount}'")
         else:
             system("echo 'editor 7 n' >> conf.dolphin")
 
