@@ -9,7 +9,7 @@ print("What mode would you like to use? 1. copycat 2. video editor 3. single fra
 mode = int(input(">>> "))
 
 if mode == 1:
-    system("echo 'cd copycat && python3 ytcopy.py' > inst.sh")
+    system("echo 'cd copycat && python3 yt-copy.py' > inst.sh")
     
     print("What YouTube link would you like to copy?")
     link = input(">>> ")
