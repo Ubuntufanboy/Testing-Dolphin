@@ -1,14 +1,17 @@
-import moviepy as mpy
+import moviepy.editor as mpy
+import os
 clips = []
 timeline = []
 audioline = []
-try:
-    f = open("conf.dolphin", "r")
-    content = f.readlines()
-except:
-    print("Error: Please check that you have a conf.dolphin file!")
-finally:
-    f.close()
+
+# os.chdir("..")
+ls = os.listdir(".")
+print(ls)
+# content = open("conf.dolphin", "r")
+"""
+os.chdir("videoeditor")
+os.chdir("videoeditor")
+# print("Error: Please check that you have a conf.dolphin file!")
 
 count = 0
 for dolphin in content:
@@ -50,3 +53,4 @@ if listed[2] == "y":
     from os import system
     system(f"mpv {filename}")
 
+"""
