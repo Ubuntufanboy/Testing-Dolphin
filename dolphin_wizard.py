@@ -3,6 +3,7 @@ import os
 system("chmod +x inst.sh")
 system("clear")
 
+
 print("----- Welcome to the Dolphin Wisard! -----")
 
 print("What mode would you like to use? 1. copycat 2. video editor 3. single frame 4. exit")
