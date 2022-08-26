@@ -1,9 +1,0 @@
-
-video_editor.py 1 /home/apollo/mp3/ark.mp3
-video_editor.py 2 /home/apollo/badapple2.mp4
-video_editor.py 3 exit
-video_editor.py 4 1
-video_editor.py 5 2
-video_editor.py 6 exit
-video_editor.py 7 cock.mp4
-video_editor.py {num_files + (i + 5)} y

@@ -1,4 +1,5 @@
 from os import system
+import os
 system("chmod +x inst.sh")
 system("clear")
 
@@ -25,16 +26,8 @@ if mode == 1:
         print("You are finished!")
         exit()
 
-    system("pwd >> pwd.txt")
-    # make a variable for the pwd
-    with open("pwd.txt", "r") as f:
-        pwd = f.read()
-    # Close the file
-    f.close()
-    system("rm pwd.txt")
-
-    # This line does not work as expected
-    # Open a github issue to fix this
+    pwd = os.getcwd()
+    print(f"DEBUG: {pwd}")
     path = pwd + "/copycat/video.webm"
 
     # This line does not work as expected.

@@ -1,1 +1,1 @@
-cd videoeditor && python3 video_editor.py
+cd copycat && python3 ytcopy.py
