@@ -30,8 +30,6 @@ if mode == 1:
     print(f"DEBUG: {pwd}")
     path = pwd + "/copycat/video.webm"
 
-    # This line does not work as expected.
-    # Open a github issue to fix
     system(f"echo 'upload_wizard.py 1 {path}' >> conf.dolphin")
 
     print("What would you like the title of the video to be?")
