@@ -24,10 +24,11 @@ for line in this_file:
     splitted = line.split()
     if splitted[1] == "1":
         link = splitted[2]
-
+    elif splitted[1] == "2":
+        answer = splitted[2]
+    else:
+        pass
 os.system(f"yt-dlp {link} -o video")
-print("Do you want to upload the video to youtube? (y/n)")
-answer = input(">>> ")
 if answer == "y":
     os.system("python3 upload_wizard.py")
 else:

@@ -2,7 +2,7 @@ from os import system
 print("This is the master file")
 print("This is what will be used on the server to make videos!")
 print("Follow this guide to set up the server:")
-print("Have you already made a conf.dolphin file? If not, make one!")
+print("Have you already made a conf.dolphin file? If not, make one! (y/n)")
 answer = input(">>> ")
 if answer == "y":
     print("Great! Let's get started!")
