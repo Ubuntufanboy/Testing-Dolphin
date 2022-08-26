@@ -56,7 +56,7 @@ if mode == 1:
     print("You are finished!")
     exit()
 elif mode == 2:
-    system("echo 'cd videoeditor && python3 video_editor.py' > inst.sh")
+    system("echo 'cd videoeditor && python3 server_editor.py' > inst.sh")
 
     print("How many files would you like to add to the media bin?")
     num_files = int(input(">>> "))
@@ -66,25 +66,16 @@ elif mode == 2:
         system(f"echo 'video_editor.py {i + 1} {path}' >> conf.dolphin")
     system(f"echo 'video_editor.py {i + 2} exit' >> conf.dolphin")
     
-    print("How many clips would you like to add to the timeline?")
-    num_clips = int(input(">>> "))
-    for i in range(num_clips):
-        print("Which file would you like to add to the timeline? ")
-        file_num = int(input(">>> "))
-        system(f"echo 'video_editor.py {num_files + (i + 2)} {file_num}' >> conf.dolphin")
-
-    system(f"echo 'video_editor.py {num_files + (i + 3)} exit' >> conf.dolphin")
-
     print("What would you like the filename to be?")
     filename = input(">>> ")
-    system(f"echo 'video_editor.py {num_files + (i + 4)} {filename}' >> conf.dolphin")
+    system(f"echo 'video_editor.py {i + 3} {filename}' >> conf.dolphin")
 
     print("Would you want to watch the video? * Recomended NO * (y/n)")
     answer = input(">>> ")
     if answer == "y":
-        system(f"echo 'video_editor.py {num_files + (i + 5)} y' >> conf.dolphin")
+        system(f"echo 'video_editor.py {i + 4} y' >> conf.dolphin")
     else:
-        system(f"echo 'video_editor.py {num_files + (i + 5)} n' >> conf.dolphin")
+        system(f"echo 'video_editor.py {i + 4} n' >> conf.dolphin")
         
 elif mode == 3:
     system("echo 'cd singleframe && bash ./main.sh' > inst.sh")

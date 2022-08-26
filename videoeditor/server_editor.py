@@ -5,11 +5,11 @@ timeline = []
 audioline = []
 
 os.chdir("..")
-ls = os.listdir(".")
+pwd = os.getcwd()
+ls = os.listdir(pwd)
 print(ls)
 content = open("conf.dolphin", "r")
 
-os.chdir("videoeditor")
 os.chdir("videoeditor")
 # print("Error: Please check that you have a conf.dolphin file!")
 
@@ -26,8 +26,6 @@ for dolphin in content:
             clips.append(listed[2])
             count += 1
 
-count *= 2
-count += 1
 print(clips)
 
 for clip in clips:
@@ -42,13 +40,23 @@ for clip in clips:
 exported = mpy.concatenate_videoclips(timeline, method="compose")
 exported.audio = mpy.concatenate_audioclips(audioline)
 
-dolphin = content[count]
-listed = dolphin.split()
-filename = listed[2]
-exported.write_videofile(filename)
+# This get's the next line we need
+for line in content:
+    copy = line.split()
+    if copy[2].endswith(".mp4"):
+        filename = copy[2]
+
+print(filename)
+exported.write_videofile(filename, fps=30, threads=1, codec="libx264")
 count += 1
 
-listed = content[count].split()
+num = 0
+for line in content:
+    if num == count:
+        listed = line
+    num += 1
+
+listed = listed.split()
 if listed[2] == "y":
     from os import system
     system(f"mpv {filename}")
