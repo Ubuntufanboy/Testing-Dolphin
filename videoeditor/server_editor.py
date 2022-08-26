@@ -4,11 +4,11 @@ clips = []
 timeline = []
 audioline = []
 
-# os.chdir("..")
+os.chdir("..")
 ls = os.listdir(".")
 print(ls)
-# content = open("conf.dolphin", "r")
-"""
+content = open("conf.dolphin", "r")
+
 os.chdir("videoeditor")
 os.chdir("videoeditor")
 # print("Error: Please check that you have a conf.dolphin file!")
@@ -53,4 +53,3 @@ if listed[2] == "y":
     from os import system
     system(f"mpv {filename}")
 
-"""
