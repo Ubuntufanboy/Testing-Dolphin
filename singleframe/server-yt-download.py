@@ -6,11 +6,11 @@ os.chdir("singleframe")
 lines = []
 for line in content:
     lines.append(line)
-
+print(lines)
 # Remove all of the lines that are not for this file
 for line in lines: # for all the lines that are in conf.dolphin...
-    listed = list(line) # Split it
-    if listed[0] != "yt-copy": # If it's not this file...
+    listed = line.split() # Split it
+    if listed[0] != "yt-download": # If it's not this file...
         lines.remove(line) # Remove it
 
 # Get the yt-link

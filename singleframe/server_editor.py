@@ -107,6 +107,7 @@ while 1:
     elif gain == "n":
         break
 
+print(answers)
 while 1:
     reverb = answers[4]
     if reverb == "y":
