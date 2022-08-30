@@ -10,11 +10,16 @@ ls = os.listdir(pwd)
 print(ls)
 content = open("conf.dolphin", "r")
 
+file_content = []
+
+for line in content:
+    file_content.append(line)
+
 os.chdir("videoeditor")
 # print("Error: Please check that you have a conf.dolphin file!")
 
 count = 0
-for dolphin in content:
+for dolphin in file_content:
     listed = dolphin.split()
     if listed[0] == "video_editor.py":
         if listed[2] == "exit":
@@ -41,7 +46,7 @@ exported = mpy.concatenate_videoclips(timeline, method="compose")
 exported.audio = mpy.concatenate_audioclips(audioline)
 
 # This get's the next line we need
-for line in content:
+for line in file_content:
     copy = line.split()
     if copy[2].endswith(".mp4"):
         filename = copy[2]
@@ -51,7 +56,8 @@ exported.write_videofile(filename, fps=30, threads=1, codec="libx264")
 count += 1
 
 num = 0
-for line in content:
+for line in file_content:
+    print(num)
     if num == count:
         listed = line
     num += 1
