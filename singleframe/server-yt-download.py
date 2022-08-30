@@ -22,4 +22,4 @@ for i in range(len(lines)):
         break
 
 os.system(f"yt-dlp {link} -o input.opus -q -x")
-os.system("ffmpeg -i input.opus input.mp3 -hide_banner -loglevel error")
+os.system("ffmpeg -i input.opus output.mp3 -hide_banner -loglevel error")

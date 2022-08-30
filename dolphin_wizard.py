@@ -89,46 +89,46 @@ elif mode == 3:
         print("Would you like to add the chours effect to the video? (y/n)")
         answer = input(">>> ")
         if answer == "y":
+            system("echo 'editor 1 y' >> conf.dolphin")
+        else:
+            system("echo 'editor 1 n' >> conf.dolphin")
+
+        print("Would you like to add the distortion effect to the video? (y/n)")
+        answer = input(">>> ")
+        if answer == "y":
             system("echo 'editor 2 y' >> conf.dolphin")
         else:
             system("echo 'editor 2 n' >> conf.dolphin")
 
-        print("Would you like to add the distortion effect to the video? (y/n)")
+        print("Would you like to add the phaser effect to the video? (y/n)")
         answer = input(">>> ")
         if answer == "y":
             system("echo 'editor 3 y' >> conf.dolphin")
         else:
             system("echo 'editor 3 n' >> conf.dolphin")
 
-        print("Would you like to add the phaser effect to the video? (y/n)")
+        print("Would you like to add the gain effect to the video? (y/n)")
         answer = input(">>> ")
         if answer == "y":
             system("echo 'editor 4 y' >> conf.dolphin")
         else:
             system("echo 'editor 4 n' >> conf.dolphin")
-
-        print("Would you like to add the gain effect to the video? (y/n)")
+    
+        print("Would you like to add the reverb effect to the video? (y/n)")
         answer = input(">>> ")
         if answer == "y":
             system("echo 'editor 5 y' >> conf.dolphin")
         else:
             system("echo 'editor 5 n' >> conf.dolphin")
-    
-        print("Would you like to add the reverb effect to the video? (y/n)")
-        answer = input(">>> ")
-        if answer == "y":
-            system("echo 'editor 6 y' >> conf.dolphin")
-        else:
-            system("echo 'editor 6 n' >> conf.dolphin")
         
         print("Would you like to add the pitch shift effect to the video? (y/n)")
         answer = input(">>> ")
         if answer == "y":
-            system("echo 'editor 7 y' >> conf.dolphin")
+            system("echo 'editor 6 y' >> conf.dolphin")
             amount = int(input("How many semitones would you like to shift?"))
-            system(f"echo 'editor 8 {amount}'")
+            system(f"echo 'editor 7 {amount}'>> conf.dolphin")
         else:
-            system("echo 'editor 7 n' >> conf.dolphin")
+            system("echo 'editor 6 n' >> conf.dolphin")
 
     else:
         system("echo 'editor 1 n' >> conf.dolphin")
