@@ -30,9 +30,22 @@ else:
 
 
 #Start program
-from pedalboard import Chorus, Distortion, Phaser, Gain, Reverb, PitchShift, Pedalboard
-from pedalboard.io import AudioFile
-from silver import Silver
+try:
+    from pedalboard import Chorus, Distortion, Phaser, Gain, Reverb, PitchShift, Pedalboard
+    from pedalboard.io import AudioFile
+except ImportError:
+    print("Hey! Pedalboard is not installed! Do you want to install it? y/n")
+    while 1:
+        answer = input(">>> ")
+        if answer == "y":
+            os.system("pip3 install pedalboard")
+            break
+        elif answer == "n":
+            print("Well, this tool is very dependant on pedalboard so you will encounter errors!")
+            break
+        else:
+            print("Wrong input!")
+
 os.system("ffmpeg -i input.mp3 audio.wav -hide_banner -loglevel error")
 
 with AudioFile('audio.wav', 'r') as f:

@@ -1,5 +1,18 @@
-from termcolor import colored
 from os import system
+try:
+    from termcolor import colored
+except ImportError:
+    print("Hey! termcolor is not installed! Would you like to install it? y/n")
+    answer = input(">>> ")
+    while 1:
+        if answer == "y":
+            system("pip3 install termcolor")
+            break
+        elif answer == "n":
+            print("Well, the program isnt going to work so... Enjoy getting an error lmao")
+            break
+        else:
+            print("Wrong input!")
 
 msg = colored("Youtube", "red")
 msg = f"----- Welcome to the {msg} uploader! -----"

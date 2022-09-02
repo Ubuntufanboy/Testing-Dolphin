@@ -1,5 +1,8 @@
-from termcolor import colored
 from os import system
+try:
+    from termcolor import colored
+except ImportError:
+    system("pip install termcolor")
 from configparser import ConfigParser
 config = ConfigParser()
 try:

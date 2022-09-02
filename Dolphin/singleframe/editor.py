@@ -8,10 +8,52 @@ else:
     pass
 
 #Start program
-from pedalboard import Chorus, Distortion, Phaser, Gain, Reverb, PitchShift, Pedalboard
-from pedalboard.io import AudioFile
-from termcolor import cprint
-from silver import Silver
+try:
+    from pedalboard import Chorus, Distortion, Phaser, Gain, Reverb, PitchShift, Pedalboard
+    from pedalboard.io import AudioFile
+except ImportError:
+    print("Hey! pedalboard is not installed! Do you want to install it? y/n")
+    while 1:
+        answer = input(">>> ")
+        if answer == "y":
+            system("pip3 install pedalboard")
+            break
+        
+        elif answer == "n":
+            print("Well, the program is built from the pedalboard module so enjoy crashing!")
+            break
+        else:
+            print("Wrong input!")
+        
+try:
+    from termcolor import cprint
+except ImportError:
+    print("Hey termcolor is not installed! Do you want to install it? y/n")
+    while 1:
+        answer = input(">>> ")
+        if answer == "y":
+            system("pip3 install termcolor")
+            break
+        elif answer == "n":
+            print("Well this program will not work so enjoy the errors!")
+            break
+        else:
+            print("Wrong input!")
+            
+try:
+    from silver import Silver
+except ImportError:
+    print("Silver is not installed! Would you like to install it? y/n")
+    while 1:
+        answer = input(">>> ")
+        if answer == "y":
+            system("wget https://raw.githubusercontent.com/Ubuntufanboy/Silver/main/silver.py")
+            break
+        elif answer == "n":
+            print("Hey! Silver is a great tool... You might crash without it...")
+            break
+        else:
+            print("Wrong input!")
 system("ffmpeg -i input.mp3 audio.wav -hide_banner -loglevel error")
 cprint("----- Welcome to Audio editor! -----", "green")
 print("")

@@ -1,5 +1,8 @@
-import moviepy.editor as mpy
 import os
+try:
+    import moviepy.editor as mpy
+except:
+    os.system("pip3 install moviepy")
 clips = []
 timeline = []
 audioline = []
