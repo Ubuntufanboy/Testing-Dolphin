@@ -32,5 +32,4 @@ os.system(f"yt-dlp {link} -o video")
 if answer == "y":
     os.system("python3 upload_wizard.py")
 else:
-    print("Exiting...")
     exit()

@@ -65,7 +65,6 @@ for line in content_2:
     lines_3.append(line)
 os.chdir("singleframe")
 
-print(f"hey there should be a lot of stuff here {lines_3}")
 # Remove all of the lines that are not for this file
 for line in lines_3: # for all the lines that are in conf.dolphin...
     listed = line.split() # Split it
@@ -128,7 +127,6 @@ while 1:
     elif gain == "n":
         break
 
-print(answers)
 while 1:
     reverb = answers[4]
     if reverb == "y":
@@ -155,7 +153,6 @@ while 1:
     elif pitch == "n":
         break
 if os.path.exists("demo6.wav"):
-    print("Testing I need to see this")
     os.system("ffmpeg -i demo6.wav output.mp3 -hide_banner -loglevel error")
 elif os.path.exists("demo5.wav"):
     os.system("ffmpeg -i demo5.wav output.mp3 -hide_banner -loglevel error")

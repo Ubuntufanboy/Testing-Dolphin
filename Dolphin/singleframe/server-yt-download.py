@@ -6,7 +6,6 @@ os.chdir("singleframe")
 lines = []
 for line in content:
     lines.append(line)
-print(lines)
 # Remove all of the lines that are not for this file
 for line in lines: # for all the lines that are in conf.dolphin...
     listed = line.split() # Split it
