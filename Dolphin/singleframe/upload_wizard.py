@@ -9,7 +9,7 @@ except ImportError:
             system("pip3 install termcolor")
             break
         elif answer == "n":
-            print("Dude...")
+            print("This program will not run propperly")
             break
         else:
             print("Wrong input!")

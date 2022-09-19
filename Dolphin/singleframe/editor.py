@@ -4,8 +4,6 @@ print("Do you want to edit the audio of the video? y/n ")
 skip = input(">>> ")
 if skip == "n":
     system("bash ./combine.sh")        
-else:
-    pass
 
 #Start program
 try:
@@ -265,5 +263,15 @@ system("rm demo3.wav")
 system("rm demo4.wav")
 system("rm demo5.wav")
 system("rm demo 6.wav")
-print("exiting...")
-system("bash ./combine.sh")
+while 1:
+    print("Would you like to Upload the video to YouTube?")
+    answer = input(">>> ")
+    print("exiting...")
+    if answer == "y":
+        system("bash ./combine.sh")
+        break
+    elif answer == "n":
+        system("bash ./combine2.sh")
+        break
+    else:
+        print("Wrong input")
